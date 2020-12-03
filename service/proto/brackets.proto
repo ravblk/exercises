@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+
+service BracketsService {
+  rpc Validate(Brackets) returns (ResultValidateBrackets);
+  rpc Fix(Brackets) returns (ResultFixBrackets);
+}
+
+message Brackets {
+  string Brackets = 1;
+}
+
+message ResultValidateBrackets {
+  string ResultValidate = 1;
+}
+
+
+message ResultFixBrackets {
+  string ResultFix = 1;
+}
