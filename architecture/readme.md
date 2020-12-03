@@ -51,7 +51,7 @@
                 "description":"Проверка документов авто"
             }
         ],
-        panition: {
+        pagination: {
             "limit":2,
             "total": 10,
             "page": 1
@@ -68,16 +68,16 @@
 
 `POST /orders`
 
-{
-    services:[
-        {
-            "id":1
-        },
-        {
-            "id":2
-        }
-    ]
-}
+    {
+        services:[
+            {
+                "id":1
+            },
+            {
+                "id":2
+            }
+        ]
+    }
 
 ### Response
 
@@ -85,9 +85,9 @@
     
     {"id":1}
 
-   HTTP/1.1 404 Not Found
+    HTTP/1.1 404 Not Found
 
-   {"status":404,"reason":"Not found"}
+    {"status":404,"reason":"Not found"}
 
 
 ## Запрос на оплату
@@ -103,9 +103,9 @@
 
 ### Response
 
-   HTTP/1.1 301 Moved Permanently 
+    HTTP/1.1 301 Moved Permanently
 
-   HTTP/1.1 404 Not Found
+    HTTP/1.1 404 Not Found
 
     {"status":404,"reason":"Not found"}
 
@@ -118,6 +118,7 @@
 
 `POST /service`
 
+    {"name":"Сервис", "price": 10000,"description":"Подбор авто"}
 
 ### Response
 
@@ -135,7 +136,7 @@
 
 `PUT /service/2`
 
-{"name":"Сервис", "price": 20000, "description":"Проверка документов авто"}
+    {"name":"Сервис", "price": 20000, "description":"Проверка документов авто"}
 
 ### Response
 

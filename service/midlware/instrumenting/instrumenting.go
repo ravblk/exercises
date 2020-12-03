@@ -55,7 +55,7 @@ func (i *instrumenting) Validate(ctx context.Context, in *brackets.Brackets) (*b
 	defer func(begin time.Time) {
 		lvs := []string{"method", "validate"}
 		i.requestCount.With(lvs...).Add(1)
-		i.requestLatency.With(lvs...).Observe(time.Since(begin).Seconds())
+		i.requestLatency.With(lvs...).Observe(time.Since(begin).Seconds() * 1_000_000)
 	}(time.Now())
 
 	return i.svc.Validate(ctx, in)
